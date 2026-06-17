@@ -1,0 +1,531 @@
+
+/* =========================
+   RESET
+========================= */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+:root{
+    --green:#3e6f61;
+    --green-dark:#2d564b;
+    --orange:#f28a23;
+    --white:#ffffff;
+    --gray:#f8f9fa;
+    --text:#2b2b2b;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    font-family:'Poppins',sans-serif;
+    background:var(--white);
+    color:var(--text);
+    overflow-x:hidden;
+}
+
+.container{
+    width:90%;
+    max-width:1280px;
+    margin:auto;
+}
+
+/* =========================
+   HEADER
+========================= */
+
+    .header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      background: rgba(255, 255, 255, 0.96);
+      backdrop-filter: blur(12px);
+      z-index: 9999;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
+    }
+
+    .nav-container {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 12px 35px;
+      width: 100%;
+      max-width: 1400px;
+      margin: 0 auto;
+    }
+
+    .logo img {
+      width: 140px;
+      display: block;
+    }
+
+    .navbar {
+      display: flex;
+      gap: 32px;
+    }
+
+    .navbar a {
+      text-decoration: none;
+      color: var(--green-dark);
+      font-weight: 600;
+      transition: 0.3s;
+      font-size: 1rem;
+    }
+
+    .navbar a:hover,
+    .navbar a.active {
+      color: var(--orange);
+    }
+
+    .menu-toggle {
+      display: none;
+      font-size: 2rem;
+      cursor: pointer;
+      color: var(--green-dark);
+    }
+
+/* =========================
+   HERO
+========================= */
+
+.hero-galeria{
+    margin-top:85px;
+    min-height:550px;
+
+    background:
+    linear-gradient(
+    rgba(0,0,0,.45),
+    rgba(0,0,0,.55)
+    ),
+    url("frente.webp");
+
+    background-repeat:no-repeat;
+    background-position:center top;
+    background-size:cover;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    text-align:center;
+    position:relative;
+}
+
+.hero-content{
+    max-width:900px;
+    color:white;
+    padding:20px;
+}
+
+.hero-badge{
+    display:inline-block;
+    padding:10px 22px;
+
+    background:rgba(242,138,35,.15);
+
+    border:1px solid rgba(255,255,255,.3);
+
+    backdrop-filter:blur(10px);
+
+    border-radius:50px;
+
+    font-size:.85rem;
+
+    letter-spacing:1px;
+
+    margin-bottom:25px;
+}
+
+.hero-content h1{
+    font-size:4rem;
+    line-height:1.1;
+    margin-bottom:20px;
+}
+
+.hero-content p{
+    font-size:1.15rem;
+    max-width:700px;
+    margin:auto;
+    line-height:1.8;
+}
+
+/* =========================
+   GALERIA
+========================= */
+
+.galeria-section{
+    padding:90px 0;
+
+    background:
+    radial-gradient(
+    circle at top right,
+    rgba(242,138,35,.06),
+    transparent 35%
+    ),
+
+    radial-gradient(
+    circle at bottom left,
+    rgba(62,111,97,.08),
+    transparent 35%
+    ),
+
+    #fafafa;
+}
+
+.titulo-galeria{
+    text-align:center;
+    margin-bottom:50px;
+}
+
+.titulo-galeria span{
+    display:inline-block;
+
+    background:#fff4e8;
+
+    color:var(--orange);
+
+    padding:8px 18px;
+
+    border-radius:30px;
+
+    font-size:.85rem;
+
+    font-weight:600;
+
+    letter-spacing:1px;
+}
+
+.titulo-galeria h2{
+    font-size:3rem;
+    color:var(--green-dark);
+    margin:18px 0;
+}
+
+.titulo-galeria p{
+    max-width:700px;
+    margin:auto;
+    line-height:1.8;
+    color:#5c6864;
+}
+
+/* =========================
+   CARROSSEL
+========================= */
+
+.carousel-container{
+    position:relative;
+    overflow:hidden;
+    border-radius:30px;
+
+    box-shadow:
+    0 25px 60px rgba(0,0,0,.12);
+
+    background:white;
+}
+
+.carousel{
+    position:relative;
+    height:700px;
+}
+
+.slide{
+    position:absolute;
+    inset:0;
+
+    width:100%;
+    height:100%;
+
+    object-fit:cover;
+
+    opacity:0;
+
+    transition:.7s ease;
+}
+
+.slide.active{
+    opacity:1;
+}
+
+.nav-btn{
+    position:absolute;
+
+    top:50%;
+    transform:translateY(-50%);
+
+    width:60px;
+    height:60px;
+
+    border:none;
+
+    border-radius:50%;
+
+    background:rgba(0,0,0,.55);
+
+    color:white;
+
+    font-size:26px;
+
+    cursor:pointer;
+
+    z-index:20;
+
+    transition:.3s;
+}
+
+.nav-btn:hover{
+    background:var(--orange);
+}
+
+.prev{
+    left:20px;
+}
+
+.next{
+    right:20px;
+}
+
+/* =========================
+   MINIATURAS
+========================= */
+
+.thumbnails{
+    display:flex;
+    justify-content:center;
+    flex-wrap:wrap;
+    gap:12px;
+    margin-top:25px;
+}
+
+.thumb{
+    width:120px;
+    height:85px;
+
+    object-fit:cover;
+
+    border-radius:14px;
+
+    cursor:pointer;
+
+    opacity:.55;
+
+    border:3px solid transparent;
+
+    transition:.4s;
+}
+
+.thumb:hover{
+    transform:translateY(-4px);
+    opacity:1;
+}
+
+.thumb.active{
+    opacity:1;
+
+    border-color:var(--orange);
+
+    box-shadow:
+    0 10px 25px rgba(242,138,35,.25);
+}
+
+/* =========================
+   FOOTER
+========================= */
+
+.footer{
+    background:#183129;
+    padding:60px 0;
+}
+
+.footer-content{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    gap:40px;
+}
+
+.footer-brand{
+    display:flex;
+    flex-direction:column;
+    gap:15px;
+}
+
+.footer-brand img{
+    width:150px;
+}
+
+.footer-brand p{
+    color:rgba(255,255,255,.75);
+    font-size:.9rem;
+}
+
+.footer-social{
+    display:flex;
+    flex-direction:column;
+    gap:16px;
+}
+
+.footer-social a{
+    display:flex;
+    align-items:center;
+    gap:12px;
+
+    color:white;
+
+    text-decoration:none;
+
+    transition:.3s;
+}
+
+.footer-social a:hover{
+    color:var(--orange);
+    transform:translateX(5px);
+}
+
+.footer-social img{
+    width:24px;
+    height:24px;
+    object-fit:contain;
+}
+
+/* =========================
+   WHATSAPP FIXO
+========================= */
+
+.whatsapp-float{
+    position:fixed;
+
+    width:70px;
+    height:70px;
+
+    bottom:25px;
+    right:25px;
+
+    z-index:99999;
+
+    animation:pulse 2s infinite;
+}
+
+.whatsapp-float img{
+    width:100%;
+    height:100%;
+}
+
+@keyframes pulse{
+
+    0%{
+        transform:scale(1);
+    }
+
+    50%{
+        transform:scale(1.08);
+    }
+
+    100%{
+        transform:scale(1);
+    }
+
+}
+
+/* =========================
+   RESPONSIVO
+========================= */
+
+@media(max-width:992px){
+
+    .menu-toggle{
+        display:block;
+    }
+
+    .navbar{
+        position:absolute;
+
+        top:85px;
+        right:20px;
+
+        width:260px;
+
+        background:white;
+
+        flex-direction:column;
+
+        align-items:flex-start;
+
+        padding:25px;
+
+        border-radius:20px;
+
+        gap:20px;
+
+        box-shadow:
+        0 15px 35px rgba(0,0,0,.12);
+
+        display:none;
+    }
+
+    .navbar.active{
+        display:flex;
+    }
+
+    .hero-content h1{
+        font-size:3rem;
+    }
+
+    .carousel{
+        height:500px;
+    }
+
+    .footer-content{
+        flex-direction:column;
+        text-align:center;
+    }
+
+    .footer-social{
+        align-items:center;
+    }
+}
+
+@media(max-width:768px){
+
+    .hero-galeria{
+        min-height:450px;
+    }
+
+    .hero-content h1{
+        font-size:2.2rem;
+    }
+
+    .hero-content p{
+        font-size:1rem;
+    }
+
+    .titulo-galeria h2{
+        font-size:2rem;
+    }
+
+    .carousel{
+        height:320px;
+    }
+
+    .thumb{
+        width:75px;
+        height:55px;
+    }
+
+    .nav-btn{
+        width:45px;
+        height:45px;
+        font-size:18px;
+    }
+
+    .whatsapp-float{
+        width:60px;
+        height:60px;
+    }
+}
+
