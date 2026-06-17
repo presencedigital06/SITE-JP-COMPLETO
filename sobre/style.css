@@ -1,0 +1,390 @@
+ * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      background-color: #ffffff;
+      color: #2b2b2b;
+      scroll-behavior: smooth;
+    }
+
+    :root {
+      --green: #3e6f61;
+      --green-dark: #2d564b;
+      --orange: #f28a23;
+      --white: #ffffff;
+      --gray-light: #f8f9fa;
+      --text-dark: #1e2a2a;
+    }
+
+    .container {
+      width: 90%;
+      max-width: 1280px;
+      margin: 0 auto;
+    }
+
+    /* ===== HEADER / MENU ===== */
+    .header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      background: rgba(255, 255, 255, 0.96);
+      backdrop-filter: blur(12px);
+      z-index: 9999;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
+    }
+
+    .nav-container {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 12px 35px;
+      width: 100%;
+      max-width: 1400px;
+      margin: 0 auto;
+    }
+
+    .logo img {
+      width: 140px;
+      display: block;
+    }
+
+    .navbar {
+      display: flex;
+      gap: 32px;
+    }
+
+    .navbar a {
+      text-decoration: none;
+      color: var(--green-dark);
+      font-weight: 600;
+      transition: 0.3s;
+      font-size: 1rem;
+    }
+
+    .navbar a:hover,
+    .navbar a.active {
+      color: var(--orange);
+    }
+
+    .menu-toggle {
+      display: none;
+      font-size: 2rem;
+      cursor: pointer;
+      color: var(--green-dark);
+    }
+
+    /* ===== SOBRE NÓS (PÁGINA COMPLETA) ===== */
+    .page-about {
+      padding-top: 130px;
+      padding-bottom: 80px;
+      background: var(--white);
+    }
+
+    .about-header {
+      text-align: center;
+      margin-bottom: 50px;
+    }
+
+    .about-header h1 {
+      font-size: 3rem;
+      color: var(--green-dark);
+      margin-bottom: 15px;
+    }
+
+    .about-header p {
+      font-size: 1.2rem;
+      color: #5a6e6a;
+      max-width: 750px;
+      margin: 0 auto;
+    }
+
+    .divider {
+      width: 80px;
+      height: 4px;
+      background: var(--orange);
+      margin: 20px auto 0;
+      border-radius: 4px;
+    }
+
+    /* TEXTO COMPLETO SOBRE A CLÍNICA */
+    .clinica-fulltext {
+      background: var(--gray-light);
+      border-radius: 32px;
+      padding: 48px 40px;
+      margin-bottom: 70px;
+      box-shadow: 0 8px 24px rgba(0,0,0,0.03);
+    }
+
+    .clinica-fulltext h2 {
+      font-size: 2rem;
+      color: var(--green-dark);
+      margin-bottom: 20px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .clinica-fulltext h2 i {
+      font-size: 2rem;
+    }
+
+    .clinica-fulltext p {
+      line-height: 1.8;
+      font-size: 1.05rem;
+      margin-bottom: 1.2rem;
+      color: #2c3e3a;
+    }
+
+    .highlight-box {
+      background: #eef4f2;
+      padding: 20px 28px;
+      border-radius: 24px;
+      margin: 28px 0 15px;
+      border-left: 6px solid var(--orange);
+    }
+
+    /* VETERINÁRIO + TEXTO + FOTO */
+    .veterinario-section {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 48px;
+      margin-bottom: 70px;
+      align-items: center;
+      background: white;
+      border-radius: 40px;
+      box-shadow: 0 15px 35px rgba(0, 0, 0, 0.05);
+      overflow: hidden;
+    }
+
+    .veterinario-foto {
+      flex: 1.1;
+      min-width: 280px;
+    }
+
+    .veterinario-foto img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      max-height: 480px;
+      transition: transform 0.4s ease;
+    }
+
+    .veterinario-foto img:hover {
+      transform: scale(1.01);
+    }
+
+    .veterinario-texto {
+      flex: 1.4;
+      padding: 30px 30px 30px 0;
+    }
+
+    .veterinario-texto h3 {
+      font-size: 2rem;
+      color: var(--green-dark);
+      margin-bottom: 8px;
+    }
+
+    .veterinario-badge {
+      background: var(--orange);
+      display: inline-block;
+      padding: 6px 18px;
+      border-radius: 40px;
+      color: white;
+      font-weight: 600;
+      font-size: 0.85rem;
+      margin-bottom: 20px;
+      letter-spacing: 0.5px;
+    }
+
+    .veterinario-texto p {
+      margin-bottom: 1rem;
+      line-height: 1.7;
+      font-size: 1rem;
+    }
+
+    /* MAPA GOOGLE */
+    .mapa-container {
+      margin-bottom: 70px;
+      border-radius: 32px;
+      overflow: hidden;
+      box-shadow: 0 12px 28px rgba(0, 0, 0, 0.1);
+      border: 1px solid #e0e7e5;
+    }
+
+    .mapa-container iframe {
+      width: 100%;
+      height: 450px;
+      border: 0;
+      display: block;
+    }
+
+    .endereco-info {
+      background: var(--green-dark);
+      color: white;
+      padding: 20px 28px;
+      border-radius: 28px;
+      text-align: center;
+      margin-top: 20px;
+    }
+
+    .endereco-info p {
+      font-weight: 500;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+
+    /* FOOTER IGUAL AO CÓDIGO FORNECIDO */
+    .footer {
+      background: #183129;
+      padding: 40px 0 30px;
+      color: var(--white);
+    }
+
+    .footer-content {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 30px;
+      flex-wrap: wrap;
+    }
+
+    .footer-brand img {
+      width: 130px;
+      filter: brightness(0) invert(1);
+    }
+
+    .footer-brand p {
+      font-size: 0.85rem;
+      opacity: 0.8;
+      margin-top: 12px;
+    }
+
+    .footer-social {
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+    }
+
+    .footer-social a {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      color: var(--white);
+      text-decoration: none;
+      font-weight: 500;
+      transition: 0.3s;
+    }
+
+    .footer-social a:hover {
+      color: var(--orange);
+    }
+
+    .social-link img {
+      width: 24px;
+      height: 24px;
+      object-fit: contain;
+    }
+
+  
+.whatsapp-float{
+    position:fixed;
+
+    width:70px;
+    height:70px;
+
+    bottom:25px;
+    right:25px;
+
+    z-index:99999;
+
+    animation:pulse 2s infinite;
+}
+
+.whatsapp-float img{
+    width:100%;
+    height:100%;
+}
+
+@keyframes pulse{
+
+    0%{
+        transform:scale(1);
+    }
+
+    50%{
+        transform:scale(1.08);
+    }
+
+    100%{
+        transform:scale(1);
+    }
+
+}
+    /* responsividade */
+    @media (max-width: 950px) {
+      .veterinario-section {
+        flex-direction: column;
+      }
+      .veterinario-texto {
+        padding: 0 24px 32px 24px;
+      }
+      .veterinario-foto img {
+        max-height: 380px;
+        width: 100%;
+        object-fit: cover;
+      }
+      .nav-container {
+        padding: 12px 20px;
+      }
+      .navbar {
+        position: absolute;
+        top: 80px;
+        right: 20px;
+        background: white;
+        flex-direction: column;
+        padding: 24px;
+        border-radius: 24px;
+        box-shadow: 0 12px 28px rgba(0,0,0,0.15);
+        display: none;
+        gap: 18px;
+        min-width: 200px;
+        z-index: 1000;
+      }
+      .navbar.active {
+        display: flex;
+      }
+      .menu-toggle {
+        display: block;
+      }
+      .clinica-fulltext {
+        padding: 32px 24px;
+      }
+      .about-header h1 {
+        font-size: 2.3rem;
+      }
+    }
+
+    @media (max-width: 650px) {
+      .footer-content {
+        flex-direction: column;
+        text-align: center;
+      }
+      .footer-social {
+        align-items: center;
+      }
+      .mapa-container iframe {
+        height: 320px;
+      }
+      .hero h1 {
+        font-size: 2rem;
+      }
+    }
